@@ -1,4 +1,4 @@
-let knapper = document.querySelector(".knapper");
+let buttons = document.querySelector(".buttons");
 
 fetch(`https://kea-alt-del.dk/t7/api/categories`)
   .then((response) => response.json())
@@ -11,12 +11,12 @@ function showList(categories) {
       (category) => `
         
                 
-            <div class="knap">
+            <div class="button">
                 <a href="produktliste.html?category=${category.category}">${category.category}</a>
             </div>
             `
     )
     .join("");
   console.log(markup);
-  knapper.innerHTML = markup;
+  buttons.innerHTML = markup;
 }
